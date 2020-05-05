@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>C.home</title>
+</head>
+	
+<body>
+	<textarea style="width:200px; height: 60px;" id="area" placeholder="Введите название города"></textarea>
+<br>
+<button onclick="localStorage.removeItem('area');area.value=''">Очистить</button><br><br>
+<input type="checkbox" name="checkbox1" id="check1"><label>не звонить мне</label><br>
+<input type="checkbox" name="checkbox2" id="check2"><label>я прочитал и согласен с правилами пользования сервисом</label><br>
+<input type="checkbox" name="checkbox3" id="check3"><label>я не выбираю эту галочку</label><br>
+<input type="checkbox" name="checkbox4" id="check4"><label>я подтверждаю, что свобода в интернете — это возможность выбирать галочки</label><br>
+<input type="checkbox" name="checkbox5" id="check5"><label>мне больше 12 лет</label><br>
+<input type="checkbox" name="checkbox6" id="check6"><label>это задание выполнено правильно</label><br>
+<button onclick="localStorage.setItem('area');area.value=''">Сохранить</button>
+<script>
+    area.value = localStorage.getItem('area');
+    area.oninput = () => {
+      localStorage.setitem('area', area.value)
+    };
+    function textstorage(){
+    	localStorage.setItem()
+    }
+</script>
+<script>
+	$var1 = $_GET['check1'];
+	$var2 = $_GET['check2'];
+	$var1 = $_GET['check3'];
+	$var2 = $_GET['check4'];
+	$var1 = $_GET['check5'];
+	$var2 = $_GET['check6'];
+
+$value = 'your data in cookie';
+// проверяете, если чек был установлен, то это true 
+if($var1){
+    // ставим куку
+    setcookie ("checkbox1", $value);
+}else if($var1 == false && $_COOKIE["checkbox1"]){
+   // если чек не установлен и существует кука с именем your_cookie_name
+   // то ее удаляем, ставя ей отрицательное время жизни
+    setcookie ("checkbox1", "", time() - 3600);
+}
+</script>
+</body>
+</html>
